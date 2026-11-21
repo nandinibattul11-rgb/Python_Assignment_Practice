@@ -1,0 +1,15 @@
+def execution_time(func):
+    def wrapper():
+        print("Function Started")
+        func()
+        print("Function Finished")
+        return wrapper
+    
+@execution_time
+def factorial():
+    num = 5
+    fact = 1
+    for i in range(1,num+1):
+        fact = fact * i
+    print("Factorial = ",fact)
+factorial()
